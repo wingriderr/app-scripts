@@ -47,7 +47,7 @@ function constructSendEmail(patronName, patronEmail, patronData) {
   var subject = "";
   var bodyHeader = "";
   var bodyTail = "";
-  var nextAMIA = "";
+  var nextLoc = "";
   //Get Templated Data from the cells.
   for (var i = 0; i < sheetData.length; i++) {
     if (sheetData[i][0] == "Subject") {
@@ -59,11 +59,11 @@ function constructSendEmail(patronName, patronEmail, patronData) {
     if (sheetData[i][0] == "BodyTail") {
       bodyTail = sheetData[i][1];
     }
-    if (sheetData[i][0] == "NextAMIA") {
-      nextAMIA = sheetData[i][1];
+    if (sheetData[i][0] == "NextLocation") {
+      nextLoc = sheetData[i][1];
     }
   }
-  bodyTail = bodyTail.replace("@", nextAMIA); //Replace BodyTail with nextAMIA date
+  bodyTail = bodyTail.replace("@", nextLoc); //Replace BodyTail with nextLoc date
   bodySalutation = "Assalamualaikum Dear " + patronName + ", <br/><br/>";
   table = createTable(patronData);
   bodyContent = `<html><head><style>table { border:1px solid #b3adad;
