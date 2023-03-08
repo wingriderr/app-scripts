@@ -16,7 +16,7 @@ function sendEmailmain() {
   patronName = getPatronName(sheet); //GetPatronName List
   for (var i = 0; i < patronList.length; i++) {
     //For Each PatronEmail getPatronData and sendEmail
-    //  if (patronList[i] == "anwarnishil@gmail.com") { //Used for testing
+    //  if (patronList[i] == "anw******il@gmail.com") { //Used for testing
     logger(patronName[i]);
     patronData = getPatronData(sheet, patronList[i]);
     constructSendEmail(patronName[i], patronList[i], patronData);
